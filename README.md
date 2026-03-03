@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bytes Share
 
-## Getting Started
+**A free online notepad to instantly share text, code, and notes across any device.**
 
-First, run the development server:
+🔗 **Live:** [bytesshare.vercel.app](https://bytesshare.vercel.app)
+
+---
+
+## ✨ Features
+
+- ⚡ **Instant Sharing** — Paste your text, get a shareable link in seconds. No sign-up required.
+- 🌐 **Cross-Device** — Works on any browser — phone, tablet, laptop, desktop.
+- 🔒 **Password Protection** — Optionally lock clips with a password. Content is only revealed after entering the correct password.
+- ⏱️ **Auto-Expiry** — Clips self-destruct after 24 hours. Your data never stays longer than it needs to.
+- 🎨 **Modern UI** — Dark theme with glassmorphism, animated gradients, and full mobile/tablet responsiveness.
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | [Next.js 16](https://nextjs.org/) (App Router) |
+| Database | [Upstash Redis](https://upstash.com/) (Serverless) |
+| Hosting | [Vercel](https://vercel.com/) |
+| Styling | Vanilla CSS with custom design system |
+| Font | [Inter](https://fonts.google.com/specimen/Inter) + [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) |
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- An [Upstash Redis](https://console.upstash.com) database (free tier works)
+
+### Setup
 
 ```bash
+# Clone the repo
+git clone https://github.com/SinkAnkit/Bytes-Share.git
+cd Bytes-Share
+
+# Install dependencies
+npm install
+
+# Create environment file
+cp .env.example .env
+# Add your Upstash Redis credentials to .env
+
+# Run locally
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable | Description |
+|----------|-------------|
+| `UPSTASH_REDIS_REST_URL` | Your Upstash Redis REST URL |
+| `UPSTASH_REDIS_REST_TOKEN` | Your Upstash Redis REST token |
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+bytes-share/
+├── app/
+│   ├── [slug]/page.tsx      # Dynamic clip page (read/write/delete)
+│   ├── api/clip/[slug]/     # REST API (GET, POST, DELETE)
+│   ├── globals.css           # Full design system
+│   ├── layout.tsx            # Root layout with SEO metadata
+│   └── page.tsx              # Landing page
+├── .env.example
+└── package.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔒 How Password Protection Works
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. When saving a clip, optionally set a password.
+2. The password is SHA-256 hashed server-side — the raw password is never stored.
+3. When someone opens a protected clip, they see a lock screen.
+4. After entering the correct password, the content is revealed.
 
-## Deploy on Vercel
+## 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
