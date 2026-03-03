@@ -2,19 +2,19 @@
 
 **A free online notepad to instantly share text, code, and notes across any device.**
 
-🔗 **Live:** [bytesshare.vercel.app](https://bytesshare.vercel.app)
+**Live:** [bytesshare.vercel.app](https://bytesshare.vercel.app)
 
 ---
 
-## ✨ Features
+## Features
 
-- ⚡ **Instant Sharing** — Paste your text, get a shareable link in seconds. No sign-up required.
-- 🌐 **Cross-Device** — Works on any browser — phone, tablet, laptop, desktop.
-- 🔒 **Password Protection** — Optionally lock clips with a password. Content is only revealed after entering the correct password.
-- ⏱️ **Auto-Expiry** — Clips self-destruct after 24 hours. Your data never stays longer than it needs to.
-- 🎨 **Modern UI** — Dark theme with glassmorphism, animated gradients, and full mobile/tablet responsiveness.
+- **Instant Sharing** — Paste your text, get a shareable link in seconds. No sign-up required.
+- **Cross-Device** — Works on any browser — phone, tablet, laptop, desktop.
+- **Password Protection** — Optionally lock clips with a password. Content is only revealed after entering the correct password.
+- **Auto-Expiry** — Clips self-destruct after 24 hours. Your data never stays longer than it needs to.
+- **Modern UI** — Dark theme with glassmorphism, animated gradients, and full mobile/tablet responsiveness.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -24,7 +24,7 @@
 | Styling | Vanilla CSS with custom design system |
 | Font | [Inter](https://fonts.google.com/specimen/Inter) + [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) |
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -58,7 +58,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 | `UPSTASH_REDIS_REST_URL` | Your Upstash Redis REST URL |
 | `UPSTASH_REDIS_REST_TOKEN` | Your Upstash Redis REST token |
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 bytes-share/
@@ -72,13 +72,13 @@ bytes-share/
 └── package.json
 ```
 
-## 🔒 How Password Protection Works
+## How Password Protection Works
 
 1. When saving a clip, optionally set a password.
 2. The password is SHA-256 hashed server-side — the raw password is never stored.
 3. When someone opens a protected clip, they see a lock screen.
 4. After entering the correct password, the content is revealed.
 
-## 📄 License
+## License
 
 MIT
