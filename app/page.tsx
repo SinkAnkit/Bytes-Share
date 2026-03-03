@@ -30,7 +30,7 @@ export default function Home() {
                 <path d="M9 14h6" />
               </svg>
             </div>
-            <span className="nav-name">Byte<span className="text-gradient">Share</span></span>
+            <span className="nav-name">Bytes<span className="text-gradient">Share</span></span>
           </div>
           <div className="nav-links">
             <span className="nav-badge">Free &amp; Open</span>
@@ -62,7 +62,7 @@ export default function Home() {
             <div className="input-card">
               <label className="input-label" htmlFor="clip-name-input">Create or access a clip</label>
               <div className="input-group">
-                <span className="input-prefix">byteshare/</span>
+                <span className="input-prefix">bytesshare/</span>
                 <input
                   className="input-field"
                   type="text"
@@ -194,7 +194,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="landing-footer">
-        <span>Byte Share — Your instant internet clipboard</span>
+        <span>Bytes Share — Your instant internet clipboard</span>
       </footer>
     </main>
   );

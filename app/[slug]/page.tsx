@@ -113,7 +113,7 @@ export default function ClipPage({ params }: ClipPageProps) {
                     <div className="clip-header">
                         <div>
                             <div className="clip-slug">/{slug}</div>
-                            <div className="clip-url">byteshare.vercel.app/{slug}</div>
+                            <div className="clip-url">bytesshare.vercel.app/{slug}</div>
                         </div>
                     </div>
 
