@@ -307,6 +307,30 @@ body {
   animation: drift-3 14s ease-in-out infinite;
 }
 
+.decor-4 {
+  top: 15%;
+  right: 6%;
+  animation: drift-1 16s ease-in-out infinite;
+}
+
+.decor-5 {
+  bottom: 30%;
+  right: 8%;
+  animation: drift-2 11s ease-in-out infinite;
+}
+
+.decor-6 {
+  top: 40%;
+  left: 5%;
+  animation: drift-3 13s ease-in-out infinite;
+}
+
+.decor-7 {
+  bottom: 15%;
+  right: 15%;
+  animation: drift-1 15s ease-in-out infinite;
+}
+
 @keyframes drift-1 {
 
   0%,
@@ -667,9 +691,9 @@ body {
 /* ===== LANDING FOOTER ===== */
 .landing-footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
+  gap: 0.25rem;
   padding: 2rem 2.5rem;
   font-size: 0.8rem;
   color: var(--text-3);
