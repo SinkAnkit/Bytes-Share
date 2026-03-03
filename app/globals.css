@@ -1068,17 +1068,108 @@ body {
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .features-grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-    margin: 0 auto;
+
+/* --- Tablet landscape (≤ 1024px) --- */
+@media (max-width: 1024px) {
+  :root {
+    --max-w: 900px;
+  }
+
+  .hero {
+    padding: 4.5rem 2rem 3rem;
+  }
+
+  .features-section {
+    padding: 1.5rem 2rem 4rem;
+  }
+
+  .how-section {
+    padding: 3rem 2rem 4rem;
+  }
+
+  .bottom-cta {
+    padding: 3rem 2rem 2.5rem;
   }
 }
 
-@media (max-width: 680px) {
+/* --- Tablet portrait (≤ 768px) --- */
+@media (max-width: 768px) {
+
+  /* Nav */
+  .navbar {
+    padding: 0 1.25rem;
+  }
+
+  .navbar-inner {
+    height: 60px;
+  }
+
+  .nav-name {
+    font-size: 1.05rem;
+  }
+
+  .nav-logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  .nav-logo svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .nav-badge {
+    display: none;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 3.5rem 1.5rem 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  /* Input card */
+  .input-card {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  /* Features → single column */
+  .features-section {
+    padding: 1rem 1.5rem 3rem;
+  }
+
   .features-grid {
-    max-width: none;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .feature-card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  /* How it works → stacked */
+  .how-section {
+    padding: 2.5rem 1.5rem 3rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
   }
 
   .how-steps {
@@ -1088,70 +1179,312 @@ body {
 
   .how-connector {
     display: none;
-    padding: 0.25rem 0;
   }
 
   .how-step {
     flex-direction: row;
     align-items: flex-start;
+    padding: 1.5rem 1.25rem;
   }
 
-  .hero {
-    padding: 4rem 1.5rem 2.5rem;
-  }
-
-  .features-section {
-    padding: 1rem 1.5rem 3rem;
-  }
-
-  .how-section {
-    padding: 2.5rem 1.5rem 3rem;
-  }
-
+  /* Bottom CTA / Footer */
   .bottom-cta {
     padding: 2.5rem 1.5rem 2rem;
   }
 
-  .navbar {
-    padding: 0 1.25rem;
+  .bottom-cta p {
+    font-size: 1.1rem;
   }
 
-  .nav-badge {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
+  .landing-footer {
+    padding: 1.5rem 1.25rem;
   }
 
-  .hero-desc {
-    font-size: 0.95rem;
+  /* Clip page card */
+  .app-container {
+    padding: 1.5rem 1rem;
   }
 
-  .input-card {
-    padding: 1.5rem;
-  }
-
-  .input-prefix {
-    font-size: 0.72rem;
-    padding: 0 0.625rem 0 0.75rem;
+  .card-wrapper-wide {
+    max-width: 100%;
   }
 
   .card {
     padding: 2rem 1.5rem;
   }
 
+  .clip-slug {
+    font-size: 1.05rem;
+  }
+
+  /* Buttons – larger touch targets */
+  .btn {
+    padding: 0.95rem 1.5rem;
+    font-size: 0.92rem;
+    min-height: 48px;
+  }
+
+  .btn-full {
+    padding: 1rem;
+  }
+
+  .btn-group {
+    gap: 0.625rem;
+  }
+
+  /* Textarea */
+  .textarea {
+    min-height: 220px;
+    font-size: 0.88rem;
+  }
+
+  /* Lock screen */
+  .lock-form {
+    flex-direction: column;
+  }
+
+  .lock-form .btn {
+    width: 100%;
+  }
+
+  .lock-input {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* --- Mobile (≤ 480px) --- */
+@media (max-width: 480px) {
+
+  /* Hero */
+  .hero {
+    padding: 2.5rem 1rem 2rem;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-title br {
+    display: none;
+  }
+
+  .hero-desc {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.875rem;
+  }
+
+  /* Input card */
+  .input-card {
+    padding: 1.25rem;
+    border-radius: var(--r-lg);
+  }
+
+  .input-group {
+    flex-direction: column;
+    border-radius: var(--r-md);
+  }
+
+  .input-prefix {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 0.7rem 1rem;
+    font-size: 0.75rem;
+    justify-content: center;
+  }
+
+  .input-field {
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .input-label {
+    font-size: 0.72rem;
+    text-align: center;
+  }
+
+  .btn-full {
+    border-radius: var(--r-md);
+    font-size: 0.95rem;
+    padding: 1rem;
+  }
+
+  /* Features */
+  .features-section {
+    padding: 0.75rem 1rem 2.5rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--r-lg);
+  }
+
+  .feature-icon-wrap {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 1.125rem;
+  }
+
+  .feature-icon-wrap svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .feature-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .feature-card p {
+    font-size: 0.85rem;
+  }
+
+  /* How it works */
+  .how-section {
+    padding: 2rem 1rem 2.5rem;
+  }
+
+  .how-step {
+    padding: 1.25rem 1rem;
+    border-radius: var(--r-lg);
+    gap: 0.75rem;
+  }
+
+  .how-num {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    font-size: 0.82rem;
+  }
+
+  .how-body h4 {
+    font-size: 0.92rem;
+  }
+
+  .how-body p {
+    font-size: 0.82rem;
+  }
+
+  /* Clip page */
+  .app-container {
+    padding: 1rem 0.75rem;
+  }
+
+  .card {
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--r-lg);
+  }
+
+  .card-wrapper {
+    border-radius: var(--r-lg);
+  }
+
+  .card-wrapper::before {
+    border-radius: var(--r-lg);
+  }
+
+  .clip-slug {
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .clip-url {
+    font-size: 0.7rem;
+  }
+
+  .status-bar {
+    padding: 0.6rem 0.75rem;
+  }
+
+  /* Buttons stack vertically */
   .btn-group {
     flex-direction: column;
   }
 
-  .app-container {
+  .btn-group .btn {
+    min-height: 48px;
+  }
+
+  /* Lock screen */
+  .lock-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .lock-screen h3 {
+    font-size: 1rem;
+  }
+
+  .lock-screen p {
+    font-size: 0.82rem;
+  }
+
+  .lock-screen {
+    padding: 2rem 0.5rem;
+  }
+
+  /* Password */
+  .password-input {
+    font-size: 0.92rem;
+    padding: 0.85rem 1rem;
+  }
+
+  .protected-badge {
+    font-size: 0.6rem;
+    margin-left: 0.5rem;
+  }
+
+  /* Bottom */
+  .bottom-cta {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .bottom-cta p {
+    font-size: 1rem;
+  }
+
+  .landing-footer {
+    font-size: 0.7rem;
+    padding: 1.25rem 1rem;
+  }
+}
+
+/* --- Small mobile (≤ 360px) --- */
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-desc {
+    font-size: 0.85rem;
+  }
+
+  .input-card {
     padding: 1rem;
   }
 
-  .section-title {
-    font-size: 1.4rem;
+  .card {
+    padding: 1.25rem 1rem;
+  }
+
+  .navbar {
+    padding: 0 0.875rem;
+  }
+
+  .nav-name {
+    font-size: 0.95rem;
+  }
+
+  .feature-card {
+    padding: 1.25rem 1rem;
   }
 }
