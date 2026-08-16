@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Bytes Share — Free Online Notepad to Share Text & Code Instantly",
   description:
-    "A free online notepad to share text, code snippets, and notes instantly. Paste your content, get a shareable link in seconds — no sign-up required. Works across all devices. Clips auto-expire in 24 hours.",
+    "Paste text or code, get a shareable link in seconds. No sign-up, no install — works on any device. Clips auto-expire in 24 hours.",
   keywords: [
     "online notepad",
     "share text online",
@@ -36,9 +36,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+      </head>
       <body>
-        <div className="bg-pattern" />
-        <div className="grid-overlay" />
         {children}
         <footer className="footer">
           Bytes Share — Your instant internet clipboard

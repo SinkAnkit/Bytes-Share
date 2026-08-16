@@ -31,7 +31,6 @@ export default function ClipPage({ params }: ClipPageProps) {
         setTimeout(() => setToast(null), 3000);
     }, []);
 
-    // Fetch existing clip on mount
     useEffect(() => {
         async function fetchClip() {
             try {
@@ -104,8 +103,8 @@ export default function ClipPage({ params }: ClipPageProps) {
                 setShowPasswordField(false);
                 showToast(
                     data.protected
-                        ? "Clip saved with password protection! Expires in 24h."
-                        : "Clip saved! Expires in 24 hours.",
+                        ? "Saved with password protection. Expires in 24h."
+                        : "Saved. Expires in 24 hours.",
                     "success"
                 );
             } else {
@@ -156,10 +155,7 @@ export default function ClipPage({ params }: ClipPageProps) {
                 <div className="card">
                     {/* Back link */}
                     <Link href="/" className="back-link" id="back-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <line x1="19" y1="12" x2="5" y2="12" />
-                            <polyline points="12 19 5 12 12 5" />
-                        </svg>
+                        <i className="fa-solid fa-arrow-left"></i>
                         New clip
                     </Link>
 
@@ -170,10 +166,7 @@ export default function ClipPage({ params }: ClipPageProps) {
                                 /{slug}
                                 {isProtected && (
                                     <span className="protected-badge">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                                        </svg>
+                                        <i className="fa-solid fa-lock"></i>
                                         Protected
                                     </span>
                                 )}
@@ -192,10 +185,7 @@ export default function ClipPage({ params }: ClipPageProps) {
                             </span>
                         ) : isLocked ? (
                             <span className="status-badge locked">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                                </svg>
+                                <i className="fa-solid fa-lock"></i>
                                 Locked
                             </span>
                         ) : clipExists ? (
@@ -211,14 +201,11 @@ export default function ClipPage({ params }: ClipPageProps) {
                         )}
                     </div>
 
-                    {/* === LOCK SCREEN === */}
+                    {/* Lock Screen */}
                     {isLocked && !isLoading && (
                         <div className="lock-screen">
                             <div className="lock-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                                </svg>
+                                <i className="fa-solid fa-lock fa-3x"></i>
                             </div>
                             <h3>This clip is password-protected</h3>
                             <p>Enter the password to view its contents.</p>
@@ -243,10 +230,7 @@ export default function ClipPage({ params }: ClipPageProps) {
                                         <span className="spinner" />
                                     ) : (
                                         <>
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                                                <path d="M7 11V7a5 5 0 0 1 9.9-1" />
-                                            </svg>
+                                            <i className="fa-solid fa-lock-open"></i>
                                             Unlock
                                         </>
                                     )}
@@ -258,10 +242,9 @@ export default function ClipPage({ params }: ClipPageProps) {
                         </div>
                     )}
 
-                    {/* === NORMAL CONTENT === */}
+                    {/* Normal Content */}
                     {!isLocked && (
                         <>
-                            {/* Textarea */}
                             {isLoading ? (
                                 <div style={{ display: "flex", justifyContent: "center", padding: "4rem 0" }}>
                                     <span className="spinner" />
@@ -289,10 +272,7 @@ export default function ClipPage({ params }: ClipPageProps) {
                                                 className="password-toggle"
                                                 onClick={() => setShowPasswordField(!showPasswordField)}
                                             >
-                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                                                </svg>
+                                                <i className="fa-solid fa-lock"></i>
                                                 {showPasswordField ? "Remove password" : "Add password protection"}
                                             </button>
                                             {showPasswordField && (
@@ -326,11 +306,7 @@ export default function ClipPage({ params }: ClipPageProps) {
                                             </>
                                         ) : (
                                             <>
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                    <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" />
-                                                    <polyline points="17 21 17 13 7 13 7 21" />
-                                                    <polyline points="7 3 7 8 15 8" />
-                                                </svg>
+                                                <i className="fa-solid fa-floppy-disk"></i>
                                                 Save
                                             </>
                                         )}
@@ -342,10 +318,7 @@ export default function ClipPage({ params }: ClipPageProps) {
                                         disabled={!content}
                                         id="copy-button"
                                     >
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
-                                        </svg>
+                                        <i className="fa-solid fa-copy"></i>
                                         Copy
                                     </button>
 
@@ -359,10 +332,7 @@ export default function ClipPage({ params }: ClipPageProps) {
                                             {isDeleting ? (
                                                 <span className="spinner" style={{ borderTopColor: "var(--rose)" }} />
                                             ) : (
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                    <polyline points="3 6 5 6 21 6" />
-                                                    <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
-                                                </svg>
+                                                <i className="fa-solid fa-trash"></i>
                                             )}
                                         </button>
                                     )}
@@ -371,10 +341,7 @@ export default function ClipPage({ params }: ClipPageProps) {
 
                             {/* Expiry info */}
                             <div className="expiry-info" style={{ marginTop: "1.25rem" }}>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <circle cx="12" cy="12" r="10" />
-                                    <polyline points="12 6 12 12 16 14" />
-                                </svg>
+                                <i className="fa-solid fa-clock"></i>
                                 <span>Clips auto-expire 24 hours after saving</span>
                             </div>
                         </>

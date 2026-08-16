@@ -1,6 +1,6 @@
 # Bytes Share
 
-**A free online notepad to instantly share text, code, and notes across any device.**
+A free online notepad to share text, code, and notes across any device. Paste your content, get a link, access it anywhere. Clips auto-expire in 24 hours.
 
 **Live:** [bytesshare.vercel.app](https://bytesshare.vercel.app)
 
@@ -8,76 +8,64 @@
 
 ## Features
 
-- **Instant Sharing** — Paste your text, get a shareable link in seconds. No sign-up required.
-- **Cross-Device** — Works on any browser — phone, tablet, laptop, desktop.
-- **Password Protection** — Optionally lock clips with a password. Content is only revealed after entering the correct password.
-- **Auto-Expiry** — Clips self-destruct after 24 hours. Your data never stays longer than it needs to.
-- **Modern UI** — Dark theme with glassmorphism, animated gradients, and full mobile/tablet responsiveness.
+- **Instant sharing** — paste text, get a link. No sign-up required.
+- **Cross-device** — works on any browser (phone, tablet, desktop).
+- **Password protection** — optionally lock clips with a password (SHA-256 hashed server-side).
+- **Auto-expiry** — clips self-destruct after 24 hours.
+- **50KB limit** — keeps things lightweight and fast.
 
 ## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
-| Framework | [Next.js 16](https://nextjs.org/) (App Router) |
-| Database | [Upstash Redis](https://upstash.com/) (Serverless) |
-| Hosting | [Vercel](https://vercel.com/) |
-| Styling | Vanilla CSS with custom design system |
-| Font | [Inter](https://fonts.google.com/specimen/Inter) + [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) |
+| Framework | Next.js 16 (App Router) |
+| Database | Upstash Redis (serverless) |
+| Hosting | Vercel |
+| Styling | Vanilla CSS |
+| Fonts | Inter + JetBrains Mono |
+| Icons | Font Awesome 6 |
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js 18+
-- An [Upstash Redis](https://console.upstash.com) database (free tier works)
-
-### Setup
-
 ```bash
-# Clone the repo
 git clone https://github.com/SinkAnkit/Bytes-Share.git
 cd Bytes-Share
-
-# Install dependencies
 npm install
 
-# Create environment file
+# Add your Upstash Redis credentials
 cp .env.example .env
-# Add your Upstash Redis credentials to .env
+# Edit .env with UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN
 
-# Run locally
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000).
 
-### Environment Variables
+## Environment Variables
 
 | Variable | Description |
 |----------|-------------|
-| `UPSTASH_REDIS_REST_URL` | Your Upstash Redis REST URL |
-| `UPSTASH_REDIS_REST_TOKEN` | Your Upstash Redis REST token |
+| `UPSTASH_REDIS_REST_URL` | Upstash Redis REST URL |
+| `UPSTASH_REDIS_REST_TOKEN` | Upstash Redis REST token |
 
 ## Project Structure
 
 ```
-bytes-share/
 ├── app/
-│   ├── [slug]/page.tsx      # Dynamic clip page (read/write/delete)
+│   ├── [slug]/page.tsx      # Clip page (read/write/delete)
 │   ├── api/clip/[slug]/     # REST API (GET, POST, DELETE)
-│   ├── globals.css           # Full design system
-│   ├── layout.tsx            # Root layout with SEO metadata
-│   └── page.tsx              # Landing page
+│   ├── globals.css          # Styles
+│   ├── layout.tsx           # Root layout
+│   └── page.tsx             # Landing page
 ├── .env.example
 └── package.json
 ```
 
 ## How Password Protection Works
 
-1. When saving a clip, optionally set a password.
-2. The password is SHA-256 hashed server-side — the raw password is never stored.
-3. When someone opens a protected clip, they see a lock screen.
-4. After entering the correct password, the content is revealed.
+1. When saving, optionally set a password.
+2. Password is SHA-256 hashed server-side — raw password is never stored.
+3. Protected clips show a lock screen until the correct password is entered.
 
 ## License
 

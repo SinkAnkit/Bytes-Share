@@ -23,15 +23,7 @@ export default function Home() {
         <div className="navbar-inner">
           <div className="nav-brand">
             <div className="nav-logo">
-              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="6" width="24" height="22" rx="3" stroke="white" strokeWidth="2" />
-                <path d="M12 4H20V8H12V4Z" rx="1.5" fill="white" opacity="0.9" />
-                <rect x="10" y="3" width="12" height="5" rx="1.5" stroke="white" strokeWidth="1.5" />
-                <circle cx="16" cy="17" r="1.5" fill="white" />
-                <path d="M16 19V23" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
-                <path d="M10 14H22" stroke="white" strokeWidth="1.2" strokeLinecap="round" opacity="0.3" />
-                <path d="M10 25H22" stroke="white" strokeWidth="1.2" strokeLinecap="round" opacity="0.3" />
-              </svg>
+              <i className="fa-solid fa-clipboard"></i>
             </div>
             <span className="nav-name">Bytes<span className="text-gradient">Share</span></span>
           </div>
@@ -41,45 +33,11 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section — full viewport intro */}
+      {/* Hero */}
       <section className="hero">
         <div className="hero-content">
-          {/* Decorative floating elements */}
-          <div className="hero-decor">
-            <svg className="decor-icon decor-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-              <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
-            </svg>
-            <svg className="decor-icon decor-2" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="16 18 22 12 16 6" />
-              <polyline points="8 6 2 12 8 18" />
-            </svg>
-            <svg className="decor-icon decor-3" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-            </svg>
-            <svg className="decor-icon decor-4" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-            <svg className="decor-icon decor-5" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13" />
-              <polygon points="22 2 15 22 11 13 2 9 22 2" />
-            </svg>
-            <svg className="decor-icon decor-6" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="4 17 10 11 4 5" />
-              <line x1="12" y1="19" x2="20" y2="19" />
-            </svg>
-            <svg className="decor-icon decor-7" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="2" y1="12" x2="22" y2="12" />
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-            </svg>
-          </div>
-
           <div className="hero-eyebrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-            </svg>
+            <i className="fa-solid fa-bolt"></i>
             Free online notepad &amp; clipboard
           </div>
 
@@ -89,7 +47,7 @@ export default function Home() {
           </h1>
 
           <p className="hero-desc">
-            A free online notepad to instantly share text, code, and notes. Paste your content, get a shareable link in seconds — no sign-up, no install. Works on every device. Auto-expires in 24 hours.
+            Paste your content, get a shareable link in seconds. No sign-up, no install. Works on every device. Auto-expires in 24 hours.
           </p>
 
           {/* Main Input Card */}
@@ -125,48 +83,31 @@ export default function Home() {
                   </>
                 ) : (
                   <>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
+                    <i className="fa-solid fa-arrow-right"></i>
                     Open Clip
                   </>
                 )}
               </button>
             </div>
           </form>
-
-          {/* Scroll hint */}
-          <div className="scroll-hint">
-            <span>Scroll to explore</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features */}
       <section className="features-section">
         <h2 className="section-title">Why Bytes Share</h2>
         <div className="features-grid">
           <div className="feature-card">
             <div className="feature-icon-wrap cyan">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-              </svg>
+              <i className="fa-solid fa-bolt"></i>
             </div>
-            <h3>Lightning Fast</h3>
-            <p>No sign-up, no apps to install. Create a clip in under 3 seconds and share instantly.</p>
+            <h3>Instant</h3>
+            <p>No sign-up, no apps to install. Create a clip in under 3 seconds and share the link.</p>
           </div>
 
           <div className="feature-card">
             <div className="feature-icon-wrap cyan">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                <line x1="8" y1="21" x2="16" y2="21" />
-                <line x1="12" y1="17" x2="12" y2="21" />
-              </svg>
+              <i className="fa-solid fa-laptop"></i>
             </div>
             <h3>Cross-Device</h3>
             <p>Works on any browser — phone, tablet, laptop, desktop. Paste on one, read on another.</p>
@@ -174,10 +115,7 @@ export default function Home() {
 
           <div className="feature-card">
             <div className="feature-icon-wrap cyan">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
+              <i className="fa-solid fa-clock"></i>
             </div>
             <h3>Auto-Expires</h3>
             <p>Every clip self-destructs after 24 hours. Your data never stays longer than it needs to.</p>
@@ -197,9 +135,7 @@ export default function Home() {
             </div>
           </div>
           <div className="how-connector">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
+            <i className="fa-solid fa-chevron-right"></i>
           </div>
           <div className="how-step">
             <div className="how-num">2</div>
@@ -209,9 +145,7 @@ export default function Home() {
             </div>
           </div>
           <div className="how-connector">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
+            <i className="fa-solid fa-chevron-right"></i>
           </div>
           <div className="how-step">
             <div className="how-num">3</div>
@@ -228,10 +162,7 @@ export default function Home() {
         <p>Ready to share?</p>
         <a href="#clip-name-input" className="btn btn-primary"
           onClick={(e) => { e.preventDefault(); document.getElementById('clip-name-input')?.focus(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="12" y1="19" x2="12" y2="5" />
-            <polyline points="5 12 12 5 19 12" />
-          </svg>
+          <i className="fa-solid fa-arrow-up"></i>
           Start a clip
         </a>
       </section>
